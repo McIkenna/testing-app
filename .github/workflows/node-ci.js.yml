@@ -27,19 +27,19 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: |
-          cd my-app
-          npm ci
+        cd my-app
+        npm ci
     - name: Build the app 
-    - run: |
-          cd my-app
-          npm run build --if-present
+      run: |
+        cd my-app
+        npm run build --if-present
     - name: Run component tests
       run: |
-          cd my-app
-          npm run test
+        cd my-app
+        npm run test
     - name: Start the app
       run: |
-          cd my-app
-          npm start &
-          npx wait-on --timeout 60000
+        cd my-app
+        npm start &
+        npx wait-on --timeout 60000
     
